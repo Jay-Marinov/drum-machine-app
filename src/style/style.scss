@@ -1,0 +1,21 @@
+@import "./var";
+@import "./drumPad";
+@import "./display";
+@import "./switchBanks";
+@import "./volumeChange";
+
+.App {
+  background: $background-color;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  padding: 1rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

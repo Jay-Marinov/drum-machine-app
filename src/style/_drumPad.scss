@@ -1,0 +1,58 @@
+.drum-container {
+  margin: 1rem auto;
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 30px 30px;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+  align-items: center;
+  justify-content: center;
+}
+
+.drum-pad {
+  background: $pad-background;
+  color: $background-color;
+  font-weight: 800;
+  font-size: 1.6rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pad-active {
+  transform: scale(1.2);
+  transition-duration: 0.2s;
+
+  @for $i from 1 through 9 {
+    @if ($i <= 3) {
+      &:nth-child(#{$i}) {
+        color: $pad-color1;
+        box-shadow: 0px 0px 8px 3px $pad-color1;
+        -webkit-box-shadow: 0px 0px 8px 3px $pad-color1;
+        -moz-box-shadow: 0px 0px 8px 3px $pad-color1;
+      }
+    } @else if($i <= 6) {
+      &:nth-child(#{$i}) {
+        color: $pad-color2;
+        box-shadow: 0px 0px 8px 3px $pad-color2;
+        -webkit-box-shadow: 0px 0px 8px 3px $pad-color2;
+        -moz-box-shadow: 0px 0px 8px 3px $pad-color2;
+      }
+    } @else if($i <= 9) {
+      &:nth-child(#{$i}) {
+        color: $pad-color3;
+        box-shadow: 0px 0px 8px 3px $pad-color3;
+        -webkit-box-shadow: 0px 0px 8px 3px $pad-color3;
+        -moz-box-shadow: 0px 0px 8px 3px $pad-color3;
+      }
+    }
+  }
+}
